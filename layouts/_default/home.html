@@ -1,0 +1,127 @@
+{{define "main"}}
+<!-- ======= Hero Section ======= -->
+{{with .Params.hero_section}}
+<section id="hero" class="hero d-flex align-items-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9 d-flex flex-column justify-content-center">
+        <h1 data-aos="fade-up">{{.title}}</h1>
+        <h2 data-aos="fade-up" data-aos-delay="400">{{.content}}</h2>
+        <div data-aos="fade-up" data-aos-delay="600">
+          <div class="text-center text-lg-start">
+            {{with .button}}
+            <a
+              href="{{.link}}"
+              class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center"
+            >
+              <i class="{{.icon}}"></i>
+              <span>{{.label}}</span>
+            </a>
+            {{end}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{end}}
+<!-- End Hero -->
+<!-- ======= Values Section ======= -->
+{{with .Params.services}}
+<section id="values" class="values">
+  <div class="container" data-aos="fade-up">
+    <header class="section-header">
+      <h2 data-aos="fade-up">{{.title}}</h2>
+    </header>
+
+    <div class="row">
+      {{range .items}}
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+        <a href="{{.link}}" data-aos="fade-up">
+          <div class="box d-flex">
+            <div class="img">
+              <img
+                src="{{.icon}}"
+                class="img-fluid"
+                alt=""
+                data-aos="fade-up"
+              />
+            </div>
+            <div class="content text-start">
+              <h3 data-aos="fade-up">{{.title}}</h3>
+              <p data-aos="fade-up">{{.content}}</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      {{end}}
+      <div class="btn mt-5">
+        {{with .button}}
+        <a href="{{.link}}" data-aos="fade-up">{{.label}}</a>
+        {{end}}
+      </div>
+    </div>
+  </div>
+</section>
+{{end}}
+<!-- End Values Section -->
+
+<!-- ======= Video ===== -->
+{{with .Params.video_section}}
+<section class="video">
+  <div class="row video-container">
+    <div class="col-md-4">
+      <img src="{{.image}}" alt="image" class="img-fluid" data-aos="fade-up" />
+    </div>
+    <div class="col-md-8">
+      <video src="{{.video}}" autoplay muted loop data-aos="fade-up">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</section>
+{{end}}
+<!-- end video-->
+
+<!-- ======= call to action Section ======= -->
+{{with .Params.call_to_action}}
+<section class="cta">
+  <div class="container">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-md-5">
+        <h2 data-aos="fade-up">{{.title}}</h2>
+      </div>
+      <div class="col-md-5 my-0">
+        <p data-aos="fade-up">{{safeHTML .content}}</p>
+        <div class="btn mt-5 m-0">
+          {{with.button}}
+          <a href="{{.link}}" data-aos="fade-up">{{.label}}</a>
+          {{end}}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{end}}
+<!-- End call to action Section -->
+
+<!-- ======= content Section ======= -->
+{{with .Params.content}}
+<section class="content">
+  <div class="container">
+    <div class="row">
+      {{range .items}}
+      <div class="col-md-3">
+        <div class="card text-center">
+          <i class="{{.icon}}" data-aos="fade-up"></i>
+          <h4 data-aos="fade-up">{{.title}}</h4>
+          <p data-aos="fade-up">{{.content | markdownify}}</p>
+        </div>
+      </div>
+      {{end}}
+    </div>
+  </div>
+</section>
+{{end}}
+<!-- content Section -->
+{{end}}
