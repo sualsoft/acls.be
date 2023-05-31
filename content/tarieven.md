@@ -1,6 +1,6 @@
 ---
 layout: tarieven
-title: Over ons - Asbecerti
+title: Tarieven
 description: "De keuring van een mazouttank of een stookolietank is in het merendeel van de gevallen verplicht"
 keywords: Na de keuring, van je
 

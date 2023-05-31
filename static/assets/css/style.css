@@ -593,11 +593,24 @@ hero-img
 .hero-img {
   flex-direction: column;
 }
-.hero-img h2 {
+.hero-img h2,
+.hero-img3 h2 {
   font-size: 54px;
   color: #fff;
   font-weight: 800;
   font-family: "Mulish", sans-serif;
+}
+
+.hero-img3 {
+  height: 80vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.hero-img3 {
+  flex-direction: column;
+}
+.hero-img3 .title {
+  margin-top: 20vh;
 }
 
 .icon {
@@ -625,15 +638,20 @@ Inseption
 .inspection .card {
   padding: 18px;
   border: none;
-  z-index: 999;
   background-color: #fff;
   border-radius: 0px;
+}
+.inspection .card ul {
+  margin-top: 0px;
 }
 .inspection .card h2 {
   color: var(--main-color);
   font-size: 48px;
   font-weight: 800;
   font-family: "Mulish", sans-serif;
+}
+.inspection .right {
+  margin-top: 12rem;
 }
 .call_to_action {
   background-color: rgba(102, 102, 102, 0.07);
@@ -664,10 +682,13 @@ Inseption
   gap: 12px;
   padding: 0px 32px;
 }
-
+.call_to_action .icon {
+  margin-top: 0px !important;
+}
 .call_to_action .icon i {
-  color: var(--main-color);
-  font-size: 32px;
+  color: var(--main-color) !important;
+  font-size: 32px !important;
+  background-color: transparent !important;
 }
 /*--------------------------------------------------------------
 # price
@@ -716,6 +737,76 @@ Inseption
   padding: 0px;
   color: #000;
   font-weight: 700;
+}
+/*--------------------------------------------------------------
+# Contact
+--------------------------------------------------------------*/
+.contact {
+  margin-top: -120px !important;
+}
+.contact .contact-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contact .contact-card .content {
+  background-color: transparent !important;
+}
+.contact .contact-card i {
+  color: #fff;
+  font-size: 65px;
+  margin: 0px !important;
+  padding: 0px !important;
+}
+.contact .contact-card .icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary-color);
+  height: 120px;
+  width: 120px;
+  border-radius: 100px;
+}
+.contact .contact-card h5 {
+  font-weight: 700;
+  color: var(--main-color);
+}
+.message h2 {
+  font-family: "Mulish", sans-serif;
+  font-weight: 800;
+  font-size: 48px;
+  color: var(--main-color);
+  margin-bottom: 12px;
+}
+.message p {
+  font-family: "Mulish", sans-serif;
+  color: #000;
+  font-weight: 600;
+}
+.message .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background-color: var(--main-color);
+  transition: 0.3s;
+}
+.message .btn:hover {
+  background-color: var(--secondary-color);
+}
+.message .btn i {
+  color: #fff;
+}
+/*--------------------------------------------------------------
+# dark
+--------------------------------------------------------------*/
+.dark {
+  background-color: var(--main-color);
+  color: #d3d3d3;
+}
+.dark strong {
+  color: #fff;
 }
 /*--------------------------------------------------------------
 # Footer

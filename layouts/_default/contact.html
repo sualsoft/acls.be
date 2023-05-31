@@ -1,0 +1,75 @@
+{{define "main"}}
+<!---->
+{{with .Params.hero_section}}
+<section class="hero-img d-flex align-items-center justify-content-center">
+  <h2>{{.title}}</h2>
+</section>
+{{end}}
+
+<!---->
+{{with .Params.hero_section}}
+<section class="contact">
+  <div class="container">
+    <div class="row">
+      {{range .items}}
+      <div class="col-md-4 contact-card">
+        <div class="icons mb-4">
+          <i class="{{.icon}}"></i>
+        </div>
+        <div class="content text-center">
+          <h5>{{.title}}</h5>
+          <p>{{.content | safeHTML}}</p>
+        </div>
+      </div>
+      {{end}}
+    </div>
+  </div>
+</section>
+{{end}}
+<!---->
+
+{{ with .Params.prices}}
+<section class="prices">
+  <div class="container">
+    <div class="row">
+      {{range .items}}
+      <div class="col-md-6">
+        <div class="card text-center mt-{{.margin}}">
+          <h4>{{.title}}</h4>
+          <ul class="text-start">
+            {{range .price_items}}
+            <li>
+              <p>{{.name}}</p>
+              <span>{{.price}}</span>
+            </li>
+            {{end}}
+          </ul>
+        </div>
+      </div>
+      {{end}}
+    </div>
+  </div>
+</section>
+{{end}}
+<!---->
+
+<!---->
+{{with .Params.message_section}}
+<section class="message">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h2>{{.title}}</h2>
+        <p>{{.content}}</p>
+        <div class="btn">
+          {{ with .button}}
+          <a href="{{.link}}"><i class="{{.icon}} "></i></a>
+          {{end}}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{end}}
+<!---->
+{{end}}

@@ -1,0 +1,87 @@
+{{ define "main"}}
+<!---->
+{{with .Params.hero_section}}
+<section class="hero-img3" style="background-image: url({{.bg_image}})">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 title">
+        <h2>{{.title}}</h2>
+      </div>
+    </div>
+  </div>
+</section>
+{{end}}
+
+<!---->
+{{with .Params.hero_section}}
+<section class="inspection">
+  <div class="container">
+    <div class="row align-items-start justify-content-between">
+      <div class="col-md-5">
+        <div class="card">
+          {{range .content}}
+          <p>{{. | markdownify}}</p>
+          {{end}}
+        </div>
+      </div>
+      <div class="col-md-6 right">
+        <br />
+        {{range .content_right}}
+        <p>{{. | markdownify}}</p>
+        {{end}}
+      </div>
+    </div>
+  </div>
+</section>
+{{end}}
+<!---->
+{{if .Params.dark_text.enable}}
+<!---->
+{{with .Params.dark_text}}
+<!---->
+
+<section class="dark">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-5 p-4">
+        {{range.left}}
+        <p>{{. | markdownify}}</p>
+        {{end}}
+      </div>
+      <div class="col-md-5 p-3">
+        {{range.right}}
+        <p>{{. | markdownify}}</p>
+        {{end}}
+      </div>
+    </div>
+  </div>
+</section>
+{{end}}
+<!---->
+{{end}}
+
+<!---->
+{{with .Params.call_to_action}}
+<section class="call_to_action">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-5 text-start">
+        <h2>{{.title}}</h2>
+      </div>
+      <div class="col-md-6 contents">
+        <div class="icon">
+          <i class="bi bi-person-badge"></i>
+        </div>
+        <div class="content">
+          <h5>{{.sub_title}}</h5>
+          <p>{{.content | safeHTML}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{end}}
+
+<!---->
+
+{{end}}
