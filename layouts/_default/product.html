@@ -1,0 +1,79 @@
+{{define "main"}}
+<!---->
+{{with .Params.hero_section}}
+<section class="hero-img d-flex align-items-center justify-content-center">
+  <h2>{{.title}}</h2>
+</section>
+{{end}}
+
+<!---->
+{{with .Params.hero_section}}
+<secction>
+  <div
+    class="icon d-flex justify-content-center align-items-center text-center"
+  >
+    <div class="icon">
+      <i class="bi bi-percent"></i>
+    </div>
+    <h5><strong>{{.content | safeHTML}}</strong></h5>
+  </div>
+</secction>
+{{end}}
+
+<!---->
+
+{{ with .Params.prices}}
+<section class="prices">
+  <div class="container">
+    <div class="row">
+      {{range .items}}
+      <div class="col-md-6">
+        <div class="card text-center mt-{{.margin}}">
+          <h4>{{.title}}</h4>
+          <ul class="text-start">
+            {{range .price_items}}
+            <li>
+              <p>{{.name}}</p>
+              <button
+                class="snipcart-add-item buy-button"
+                data-item-id="{{.id}}"
+                data-item-price="{{.price}}"
+                data-item-url="{{.Permalink}}"
+                data-item-description="{{.description}}"
+                data-item-name="{{.name}}"
+              >
+                €{{.price}},00
+              </button>
+            </li>
+            {{end}}
+          </ul>
+        </div>
+      </div>
+      {{end}}
+    </div>
+  </div>
+</section>
+{{end}}
+<!---->
+
+<!---->
+{{with .Params.list}}
+<section class="list">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <ul>
+          {{ range .items}}
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            <p>{{.}}</p>
+          </li>
+          {{end}}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+{{end}}
+<!---->
+{{end}}
