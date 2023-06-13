@@ -142,7 +142,9 @@ section {
   display: flex;
   gap: 12px;
 }
-
+.snipcart-layout__content {
+  z-index: 999999 !important;
+}
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
 --------------------------------------------------------------*/
@@ -156,7 +158,7 @@ section {
 --------------------------------------------------------------*/
 .header {
   transition: all 0.5s;
-  z-index: 997;
+  z-index: 1;
   padding: 20px 0;
 }
 .header.header-scrolled {
